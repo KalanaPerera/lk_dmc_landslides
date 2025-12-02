@@ -45,7 +45,13 @@ class LandSlideWarningRemoteMixin:
         if not os.path.exists(pdf_path):
             urlretrieve(url_remote_pdf, pdf_path)
             log.debug(f"Downloaded {File(pdf_path)}")
-        return cls.from_pdf(pdf_path)
+        try:
+            return cls.from_pdf(pdf_path)
+        except Exception as e:
+            log.error(
+                f"Failed to parse LandslideWarning from {File(pdf_path)}: {e}"
+            )
+            return None
 
     @classmethod
     def list_from_remote(cls, n_limit: int):
@@ -53,4 +59,6 @@ class LandSlideWarningRemoteMixin:
         if n_limit is not None and len(metadata_list) > n_limit:
             metadata_list = metadata_list[:n_limit]
 
-        return [cls.from_metadata(metadata) for metadata in metadata_list]
+        lw_list = [cls.from_metadata(metadata) for metadata in metadata_list]
+        lw_list = [lw for lw in lw_list if lw is not None]
+        return lw_list
