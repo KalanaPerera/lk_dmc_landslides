@@ -5,10 +5,6 @@ from lk_dmc import LandslideWarning
 
 
 class TestCase(unittest.TestCase):
-    def test_list_from_remote(self):
-        lw_list = LandslideWarning.list_from_remote()
-        self.assertIsInstance(lw_list, list)
-        self.assertGreater(len(lw_list), 0)
 
     def test_from_pdf(self):
         lw = LandslideWarning.from_pdf(
@@ -45,3 +41,9 @@ class TestCase(unittest.TestCase):
             ],
         )
         self.assertEqual(kandy_level_3, sorted(kandy_level_3))
+
+    def test_list_from_remote(self):
+        n_limit = 10
+        lw_list = LandslideWarning.list_from_remote(n_limit)
+        self.assertIsInstance(lw_list, list)
+        self.assertEqual(len(lw_list), n_limit)

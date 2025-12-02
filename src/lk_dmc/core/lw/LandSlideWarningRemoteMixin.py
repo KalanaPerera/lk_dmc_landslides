@@ -19,17 +19,15 @@ class LandSlideWarningRemoteMixin:
 
     @classmethod
     def get_metadata_list(cls) -> list[dict]:
-        url_remote_metadata_list = cls.URL_BASE + "/docs_last100.tsv"
-        local_metadata_tsv_path = os.path.join(
-            cls.DIR_DATA, "docs_last100.tsv"
-        )
+        url_remote_metadata_list = cls.URL_BASE + "/docs_all.tsv"
+        local_metadata_tsv_path = os.path.join(cls.DIR_DATA, "docs_all.tsv")
 
         os.makedirs(cls.DIR_DATA, exist_ok=True)
         urlretrieve(url_remote_metadata_list, local_metadata_tsv_path)
 
         metadata_tsv_file = TSVFile(local_metadata_tsv_path)
         metadata_list = metadata_tsv_file.read()
-        log.info(f"Wrote {len(metadata_list)} items to {metadata_tsv_file}")
+        log.info(f"Wrote {len(metadata_list):,} items to {metadata_tsv_file}")
         return metadata_list
 
     @classmethod
@@ -41,9 +39,7 @@ class LandSlideWarningRemoteMixin:
 
         url_remote_pdf = cls.URL_BASE + f"/{decade}/{year}/{doc_id}/doc.pdf"
         year_and_month = date_str[0:7]
-        dir_pdf = os.path.join(
-            cls.DIR_DATA_PDFS, decade, year, year_and_month
-        )
+        dir_pdf = os.path.join(cls.DIR_DATA_PDFS, decade, year, year_and_month)
         os.makedirs(dir_pdf, exist_ok=True)
         pdf_path = os.path.join(dir_pdf, f"{date_str}.pdf")
         if not os.path.exists(pdf_path):
@@ -52,6 +48,9 @@ class LandSlideWarningRemoteMixin:
         return cls.from_pdf(pdf_path)
 
     @classmethod
-    def list_from_remote(cls):
-        metadata_list = cls.get_metadata_list()[: cls.N_METADATA_ITEMS]
+    def list_from_remote(cls, n_limit: int):
+        metadata_list = cls.get_metadata_list()
+        if n_limit is not None and len(metadata_list) > n_limit:
+            metadata_list = metadata_list[:n_limit]
+
         return [cls.from_metadata(metadata) for metadata in metadata_list]
