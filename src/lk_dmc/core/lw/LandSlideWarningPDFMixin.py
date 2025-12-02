@@ -138,7 +138,9 @@ class LandSlideWarningPDFMixin:
         return tables
 
     @classmethod
-    def __process_all_tables__(cls, tables) -> dict[int, dict[str, list[str]]]:
+    def __process_all_tables__(
+        cls, tables
+    ) -> dict[int, dict[str, list[str]]]:
         """Process all tables and build the district to DSDs mapping."""
         level_to_district_to_dsds = {}
         prev_ent_district = None
