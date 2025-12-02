@@ -1,5 +1,4 @@
 import os
-from dataclasses import dataclass
 from urllib.request import urlretrieve
 
 from utils import File, Log, TSVFile
@@ -7,14 +6,10 @@ from utils import File, Log, TSVFile
 log = Log("LandslideWarning")
 
 
-@dataclass
-class LandslideWarning:
-    time_ut_start: int
-    time_ut_end: int
-    dsd_id_to_threat_level: dict[str, int]
-
+class LandSlideWarningRemoteMixin:
     DIR_DATA = "data"
     DIR_DATA_PDFS = os.path.join(DIR_DATA, "pdfs")
+    DIR_DATA_JSONS = os.path.join(DIR_DATA, "jsons")
     URL_BASE = (
         "https://raw.githubusercontent.com"
         + "/nuuuwan/lk_dmc/refs/heads/data_lk_dmc_landslide_warnings"
@@ -38,15 +33,7 @@ class LandslideWarning:
         return metadata_list
 
     @classmethod
-    def from_pdf(cls, pdf_path):
-        return cls(
-            time_ut_start=0,
-            time_ut_end=0,
-            dsd_id_to_threat_level={},
-        )
-
-    @classmethod
-    def from_metadata(cls, metadata: dict) -> "LandslideWarning":
+    def from_metadata(cls, metadata: dict):
         doc_id = metadata["doc_id"]
         date_str = metadata["date_str"]
         year = date_str[0:4]
