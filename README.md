@@ -64,6 +64,7 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 - `LK-2118` Udadumbara
 - `LK-2121` Minipe
 - `LK-2127` Kundasale
+- `LK-2130` Kandy Four Gravets & Gangawata Korale
 - `LK-2133` Harispattuwa
 - `LK-2134` Hatharaliyadda
 - `LK-2136` Yatinuwara

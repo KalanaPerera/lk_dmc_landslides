@@ -23,6 +23,7 @@ class LandSlideWarningPDFMixin:
             "Mathurata": "Hanguranketha",
             "Thalawakele": "Nuwara Eliya",
             "Nildandahinna": "Walapane",
+            "Gangawata Korale": "Kandy Four Gravets & Gangawata Korale",
         }
 
         for dsd_name in dsd_names_all:
