@@ -138,9 +138,7 @@ class LandSlideWarningPDFMixin:
         return tables
 
     @classmethod
-    def __process_all_tables__(
-        cls, tables
-    ) -> dict[int, dict[str, list[str]]]:
+    def __process_all_tables__(cls, tables) -> dict[int, dict[str, list[str]]]:
         """Process all tables and build the district to DSDs mapping."""
         level_to_district_to_dsds = {}
         prev_ent_district = None
@@ -158,9 +156,12 @@ class LandSlideWarningPDFMixin:
     @staticmethod
     def __sort_dsd_lists__(level_to_district_to_dsds: dict) -> None:
         """Sort all DSD lists in place."""
-        for district_dict in level_to_district_to_dsds.values():
-            for dsd_list in district_dict.values():
-                dsd_list.sort()
+        for level, district_dict in level_to_district_to_dsds.items():
+            for district_id, dsd_list in district_dict.items():
+                dsd_list = list(set(dsd_list))
+                level_to_district_to_dsds[level][district_id] = sorted(
+                    dsd_list
+                )
 
     @classmethod
     def __extract_tables_from_pdf__(
