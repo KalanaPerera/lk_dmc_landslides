@@ -46,3 +46,19 @@ class LandslideWarning(LandSlideWarningPDFMixin, LandSlideWarningRemoteMixin):
     def from_json(cls, json_path) -> "LandslideWarning":
         d = JSONFile(json_path).read()
         return cls(**d)
+
+    @classmethod
+    def __get_all_json_paths__(cls):
+        json_paths = []
+        for dirpath, _, filenames in os.walk(cls.DIR_DATA_JSONS):
+            for filename in filenames:
+                if filename.endswith(".json"):
+                    json_paths.append(os.path.join(dirpath, filename))
+        return sorted(json_paths)
+
+    @classmethod
+    def list_all(cls):
+        json_paths = cls.__get_all_json_paths__()
+        lw_list = [cls.from_json(json_path) for json_path in json_paths]
+        lw_list.sort(key=lambda lw: lw.date_id, reverse=True)
+        return lw_list

@@ -3,3 +3,4 @@
 
 from lk_dmc.core import (LandslideWarning, LandSlideWarningPDFMixin,
                          LandSlideWarningRemoteMixin, ThreatLevel)
+from lk_dmc.ReadMe import ReadMe

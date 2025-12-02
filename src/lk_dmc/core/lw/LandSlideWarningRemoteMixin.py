@@ -39,7 +39,9 @@ class LandSlideWarningRemoteMixin:
 
         url_remote_pdf = cls.URL_BASE + f"/{decade}/{year}/{doc_id}/doc.pdf"
         year_and_month = date_str[0:7]
-        dir_pdf = os.path.join(cls.DIR_DATA_PDFS, decade, year, year_and_month)
+        dir_pdf = os.path.join(
+            cls.DIR_DATA_PDFS, decade, year, year_and_month
+        )
         os.makedirs(dir_pdf, exist_ok=True)
         pdf_path = os.path.join(dir_pdf, f"{date_str}.pdf")
         if not os.path.exists(pdf_path):
