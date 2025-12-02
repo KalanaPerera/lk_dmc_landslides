@@ -74,7 +74,7 @@ class LandSlideWarningPDFMixin:
                 filter_ent_type=EntType.DSD,
                 filter_parent_id=district_id,
             )
-            if len(cand_ent_dsds) == 1:
+            if len(cand_ent_dsds) >= 1:
                 ent_dsds.append(cand_ent_dsds[0])
         return ent_dsds
 
@@ -92,7 +92,6 @@ class LandSlideWarningPDFMixin:
         dsd_names = cls.__parse_dsd_name_list__(row_values[threat_level])
         ent_dsds = cls.__get_dsd_entities__(dsd_names, district_id)
         dsd_ids = [ent_dsd.id for ent_dsd in ent_dsds]
-
         if not dsd_ids:
             return
 
@@ -139,7 +138,9 @@ class LandSlideWarningPDFMixin:
         return tables
 
     @classmethod
-    def __process_all_tables__(cls, tables) -> dict[int, dict[str, list[str]]]:
+    def __process_all_tables__(
+        cls, tables
+    ) -> dict[int, dict[str, list[str]]]:
         """Process all tables and build the district to DSDs mapping."""
         level_to_district_to_dsds = {}
         prev_ent_district = None

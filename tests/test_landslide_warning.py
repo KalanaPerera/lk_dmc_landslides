@@ -13,7 +13,7 @@ class TestCase(unittest.TestCase):
         )
         self.assertIsInstance(lw, LandslideWarning)
         self.assertEqual(lw.date_id, "2025-12-02")
-        self.assertEqual(lw.get_level_to_n_warnings(), {1: 18, 2: 0, 3: 63})
+        self.assertEqual(lw.get_level_to_n_warnings(), {1: 18, 2: 0, 3: 64})
 
         kandy_level_3 = lw.level_to_district_to_dsds[3]["LK-21"]
         self.assertEqual(
@@ -26,7 +26,9 @@ class TestCase(unittest.TestCase):
                 "LK-2115",
                 "LK-2118",
                 "LK-2121",
+                "LK-2124",
                 "LK-2127",
+                "LK-2130",
                 "LK-2133",
                 "LK-2134",
                 "LK-2136",
@@ -35,7 +37,6 @@ class TestCase(unittest.TestCase):
                 "LK-2145",
                 "LK-2148",
                 "LK-2151",
-                "LK-2154",
                 "LK-2154",
                 "LK-2157",
             ],
