@@ -1,7 +1,7 @@
 import os
 from dataclasses import asdict, dataclass
 
-from utils import JSONFile, Log
+from utils import JSONFile, Log, TimeFormat
 
 from .LandSlideWarningPDFMixin import LandSlideWarningPDFMixin
 from .LandSlideWarningRemoteMixin import LandSlideWarningRemoteMixin
@@ -76,3 +76,23 @@ class LandslideWarning(LandSlideWarningPDFMixin, LandSlideWarningRemoteMixin):
         json_file_latest = JSONFile(json_path_latest)
         json_file_latest.write(asdict(latest))
         log.info(f"Wrote {json_file_latest}")
+
+        latest_flat = []
+        for (
+            threat_level,
+            district_to_dsds,
+        ) in latest.level_to_district_to_dsds.items():
+            for _, dsd_id_list in district_to_dsds.items():
+                for dsd_id in dsd_id_list:
+                    time_ut = TimeFormat("%Y-%m-%d").parse(latest.date_id).ut
+                    latest_flat.append(
+                        {
+                            "id": dsd_id,
+                            "time_ut": time_ut,
+                            "threat_level": threat_level,
+                        }
+                    )
+        json_path_latest_flat = os.path.join(cls.DIR_DATA, "latest_flat.json")
+        json_file_latest_flat = JSONFile(json_path_latest_flat)
+        json_file_latest_flat.write(latest_flat)
+        log.info(f"Wrote {json_file_latest_flat}")
