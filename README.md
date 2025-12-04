@@ -24,6 +24,7 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 
 #### `LK-82` Moneragala
 
+- `LK-8203` Bibile
 - `LK-8209` Medagama
 
 #### `LK-91` Ratnapura
@@ -54,6 +55,7 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 - `LK-8118` Passara
 - `LK-8119` Lunugala
 - `LK-8121` Badulla
+- `LK-8124` Hali-Ela
 - `LK-8127` Uva Paranagama
 - `LK-8130` Welimada
 - `LK-8133` Bandarawela
