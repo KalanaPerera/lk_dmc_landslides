@@ -3,7 +3,7 @@
 
 From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=com_dmcreports&view=reports&Itemid=276&report_type_id=5&lang=en).
 
-## Latest Warnings (2025-12-04)
+## Latest Warnings (2025-12-05)
 
 ### 🟡 Level 1 - "watch"
 
@@ -11,6 +11,11 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 
 - `LK-1115` Seethawaka
 - `LK-1118` Padukka
+
+#### `LK-31` Galle
+
+- `LK-3112` Elpitiya
+- `LK-3148` Yakkalamulla
 
 #### `LK-12` Gampaha
 
@@ -23,6 +28,16 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 - `LK-1309` Horana
 - `LK-1310` Ingiriya
 - `LK-1312` Bulathsinhala
+
+#### `LK-32` Matara
+
+- `LK-3209` Pasgoda
+- `LK-3215` Athuraliya
+
+#### `LK-82` Moneragala
+
+- `LK-8203` Bibile
+- `LK-8209` Medagama
 
 #### `LK-91` Ratnapura
 
@@ -38,9 +53,6 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 - `LK-9130` Ayagama
 - `LK-9133` Kalawana
 - `LK-9136` Nivithigala
-- `LK-9139` Kahawatta
-- `LK-9142` Godakawela
-- `LK-9151` Kolonna
 
 ### 🟠 Level 2 - "alert"
 
@@ -60,19 +72,15 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 - `LK-8139` Haputale
 - `LK-8142` Haldummulla
 
-#### `LK-92` Kegalle
-
-- `LK-9221` Ruwanwella
-- `LK-9230` Dehiovita
-- `LK-9233` Deraniyagala
-
 #### `LK-23` Nuwara Eliya
 
-- `LK-2303` Kothmale
-- `LK-2306` Hanguranketha
-- `LK-2309` Walapane
 - `LK-2312` Nuwara Eliya
-- `LK-2315` Ambagamuwa
+
+#### `LK-91` Ratnapura
+
+- `LK-9139` Kahawatta
+- `LK-9142` Godakawela
+- `LK-9151` Kolonna
 
 ### 🛑 Level 3 - "evacuate"
 
@@ -107,8 +115,11 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 - `LK-9212` Kegalle
 - `LK-9215` Galigamuwa
 - `LK-9218` Warakapola
+- `LK-9221` Ruwanwella
 - `LK-9224` Bulathkohupitiya
 - `LK-9227` Yatiyanthota
+- `LK-9230` Dehiovita
+- `LK-9233` Deraniyagala
 
 #### `LK-61` Kurunegala
 
@@ -130,3 +141,8 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 - `LK-2227` Wilgamuwa
 - `LK-2230` Rattota
 - `LK-2233` Ukuwela
+
+#### `LK-23` Nuwara Eliya
+
+- `LK-2306` Hanguranketha
+- `LK-2309` Walapane
