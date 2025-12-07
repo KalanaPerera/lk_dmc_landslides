@@ -20,6 +20,8 @@ class LandSlideWarningPDFMixin:
 
         before_to_after = {
             "Gangawata Korale": "Kandy Four Gravets & Gangawata Korale",
+            "Ambanganga Korale": "Ambanganga",
+            "Laggala Pallegama": "Laggala",
         }
 
         for dsd_name in dsd_names_all:

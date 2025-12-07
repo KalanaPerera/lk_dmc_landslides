@@ -3,6 +3,10 @@
 
 From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=com_dmcreports&view=reports&Itemid=276&report_type_id=5&lang=en).
 
+## Landslide Warning Map
+
+![Landslide Warning Map](landslide_warning_map.png)
+
 ## Latest Warnings (2025-12-07)
 
 ### 🟡 Level 1 - "watch"
@@ -136,6 +140,8 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 - `LK-2212` Pallepola
 - `LK-2215` Yatawatta
 - `LK-2218` Matale
+- `LK-2221` Ambanganga
+- `LK-2224` Laggala
 - `LK-2227` Wilgamuwa
 - `LK-2230` Rattota
 - `LK-2233` Ukuwela

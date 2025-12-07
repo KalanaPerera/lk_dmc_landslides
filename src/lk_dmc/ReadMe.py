@@ -1,6 +1,7 @@
 """README generator for landslide warnings."""
 
-from gig import Ent
+import matplotlib.pyplot as plt
+from gig import Ent, EntType
 from utils import File, Log
 
 from lk_dmc.core.lw.LandslideWarning import LandslideWarning
@@ -58,8 +59,50 @@ class ReadMe:
                 lines.append("")
         return lines
 
+    def get_lines_for_chart(self) -> list[str]:
+        latest_lw = self.lw_list[0]
+
+        dsd_to_level = {}
+        for (
+            level,
+            district_to_dsds,
+        ) in latest_lw.level_to_district_to_dsds.items():
+            for dsd_id_list in district_to_dsds.values():
+                for dsd_id in dsd_id_list:
+                    dsd_to_level[dsd_id] = int(level)
+
+        dsd_ents = Ent.list_from_type(EntType.DSD)
+
+        fig, ax = plt.subplots(figsize=(12, 12))
+        for ent in dsd_ents:
+            level = dsd_to_level.get(ent.id, 0)
+            geo = ent.geo()
+            color = ["#FFFFFF", "#FFFF00", "#FFA500", "#FF0000"][level]
+            geo.plot(ax=ax, color=color, edgecolor="#888888", linewidth=0.5)
+
+        plt.title(
+            f"Landslide Warnings in Sri Lanka on {latest_lw.date_id}",
+            fontsize=16,
+        )
+        image_path = "landslide_warning_map.png"
+        plt.savefig(image_path, dpi=300)
+        plt.close()
+        log.info(f"Wrote {File(image_path)}")
+
+        lines = [
+            "## Landslide Warning Map",
+            "",
+            f"![Landslide Warning Map]({image_path})",
+            "",
+        ]
+        return lines
+
     def get_lines(self) -> str:
-        return self.get_lines_for_header() + self.get_lines_for_latest()
+        return (
+            self.get_lines_for_header()
+            + self.get_lines_for_chart()
+            + self.get_lines_for_latest()
+        )
 
     def build(self) -> None:
         lines = self.get_lines()
