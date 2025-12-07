@@ -19,12 +19,6 @@ class LandSlideWarningPDFMixin:
         extra_dsd_names = []
 
         before_to_after = {
-            "Kotmale": "Kotmale",
-            "Kothmale": "Kotmale",
-            "Mathurata": "Hanguranketha",
-            "Thalawakele": "Ambagamuwa",
-            "Ambagamuwa Korale": "Ambagamuwa",
-            "Nildandahinna": "Walapane",
             "Gangawata Korale": "Kandy Four Gravets & Gangawata Korale",
         }
 
@@ -141,9 +135,7 @@ class LandSlideWarningPDFMixin:
         return tables
 
     @classmethod
-    def __process_all_tables__(
-        cls, tables
-    ) -> dict[int, dict[str, list[str]]]:
+    def __process_all_tables__(cls, tables) -> dict[int, dict[str, list[str]]]:
         """Process all tables and build the district to DSDs mapping."""
         level_to_district_to_dsds = {}
         prev_ent_district = None
