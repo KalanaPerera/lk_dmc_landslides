@@ -18,7 +18,11 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 - `LK-1212` Mirigama
 - `LK-1227` Attanagalla
 
+<<<<<<< HEAD
 #### `LK-82` Moneragala
+=======
+#### `LK-82` Monaragala
+>>>>>>> 399c431 (Update landslide warning data and JSON files for December 7, 2025)
 
 - `LK-8203` Bibile
 - `LK-8209` Medagama
@@ -31,6 +35,7 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 - `LK-9112` Ratnapura
 - `LK-9115` Imbulpe
 - `LK-9118` Balangoda
+- `LK-9119` Kalthota
 - `LK-9121` Opanayake
 - `LK-9124` Pelmadulla
 - `LK-9127` Elapatha
@@ -42,14 +47,14 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 
 #### `LK-81` Badulla
 
-- `LK-8109` Meegahakivula
-- `LK-8112` Kandaketiya
+- `LK-8109` Meegahakiula
+- `LK-8112` Kandeketiya
 - `LK-8115` Soranathota
 - `LK-8118` Passara
 - `LK-8119` Lunugala
 - `LK-8121` Badulla
 - `LK-8124` Hali-Ela
-- `LK-8127` Uva Paranagama
+- `LK-8127` Uvaparanagama
 - `LK-8130` Welimada
 - `LK-8133` Bandarawela
 - `LK-8136` Ella
@@ -59,7 +64,11 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 #### `LK-92` Kegalle
 
 - `LK-9221` Ruwanwella
+<<<<<<< HEAD
 - `LK-9230` Dehiovita
+=======
+- `LK-9230` Dehiowita
+>>>>>>> 399c431 (Update landslide warning data and JSON files for December 7, 2025)
 - `LK-9233` Deraniyagala
 
 #### `LK-61` Kurunegala
@@ -68,15 +77,26 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 
 #### `LK-23` Nuwara Eliya
 
+<<<<<<< HEAD
 - `LK-2303` Kothmale
 - `LK-2306` Hanguranketha
 - `LK-2309` Walapane
+=======
+- `LK-2303` Kothmale East
+- `LK-2304` Kothmale West
+- `LK-2306` Hanguranketa
+- `LK-2307` Mathurata
+- `LK-2309` Walapane
+- `LK-2310` Nildandahinna
+>>>>>>> 399c431 (Update landslide warning data and JSON files for December 7, 2025)
 - `LK-2312` Nuwara Eliya
-- `LK-2315` Ambagamuwa
+- `LK-2313` Thalawakele
+- `LK-2315` Ambagamuwa Korale
+- `LK-2316` Norwood
 
 #### `LK-91` Ratnapura
 
-- `LK-9139` Kahawatta
+- `LK-9139` Kahawattha
 - `LK-9142` Godakawela
 - `LK-9151` Kolonna
 
@@ -84,16 +104,16 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 
 #### `LK-21` Kandy
 
-- `LK-2103` Thumpane
-- `LK-2106` Pujapitiya
+- `LK-2103` Tumpane
+- `LK-2106` Poojapitiya
 - `LK-2109` Akurana
 - `LK-2112` Pathadumbara
 - `LK-2115` Panvila
-- `LK-2118` Udadumbara
+- `LK-2118` Ududumbara
 - `LK-2121` Minipe
 - `LK-2124` Medadumbara
 - `LK-2127` Kundasale
-- `LK-2130` Kandy Four Gravets & Gangawata Korale
+- `LK-2130` Gangawata Korale
 - `LK-2133` Harispattuwa
 - `LK-2134` Hatharaliyadda
 - `LK-2136` Yatinuwara
@@ -103,18 +123,23 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 - `LK-2148` Deltota
 - `LK-2151` Udapalatha
 - `LK-2154` Ganga Ihala Korale
-- `LK-2157` Pasbage Korale
+- `LK-2157` Pasbagekorale
 
 #### `LK-92` Kegalle
 
 - `LK-9203` Rambukkana
 - `LK-9206` Mawanella
-- `LK-9209` Aranayaka
+- `LK-9209` Aranayake
 - `LK-9212` Kegalle
 - `LK-9215` Galigamuwa
 - `LK-9218` Warakapola
+<<<<<<< HEAD
 - `LK-9224` Bulathkohupitiya
 - `LK-9227` Yatiyanthota
+=======
+- `LK-9224` Bulathkohipitiya
+- `LK-9227` Yatiyantota
+>>>>>>> 399c431 (Update landslide warning data and JSON files for December 7, 2025)
 
 #### `LK-61` Kurunegala
 
@@ -130,8 +155,6 @@ From the [Disaster Management Centre](https://www.dmc.gov.lk/index.php?option=co
 - `LK-2212` Pallepola
 - `LK-2215` Yatawatta
 - `LK-2218` Matale
-- `LK-2221` Ambanganga Korale
-- `LK-2224` Laggala-Pallegama
 - `LK-2227` Wilgamuwa
 - `LK-2230` Rattota
 - `LK-2233` Ukuwela
